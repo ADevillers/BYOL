@@ -36,7 +36,7 @@ def run(args):
     checkpoint = torch.load(args.checkpoint, map_location=device)
     
     # INIT TRACKER
-    main.tracker = Tracker(device)
+    main.tracker = Tracker(device, world_size)
 
     # INIT WRITER
     if is_master:
